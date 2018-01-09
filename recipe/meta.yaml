@@ -1,6 +1,6 @@
 {% set name = "argon2_cffi" %}
-{% set version = "16.3.0" %}
-{% set sha256 = "99a5246d68fb17c33eddc9e8b21cfcb0de1f8360d0bb0b73be5ede20078de3aa" %}
+{% set version = "18.1.0" %}
+{% set sha256 = "7e4b75611b73f53012117ad21cdde7a17b32d1e99ff6799f22d827eb83a2a59b" %}
 
 package:
   name: {{ name|lower }}
