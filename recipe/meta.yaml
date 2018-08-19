@@ -1,6 +1,6 @@
 {% set name = "argon2_cffi" %}
-{% set version = "18.1.0" %}
-{% set sha256 = "7e4b75611b73f53012117ad21cdde7a17b32d1e99ff6799f22d827eb83a2a59b" %}
+{% set version = "18.2.0" %}
+{% set sha256 = "dcb813d41a877820a42dcd3b8450acdef9ce9c8470d1192ae9e1d31f5f4efb22" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 
