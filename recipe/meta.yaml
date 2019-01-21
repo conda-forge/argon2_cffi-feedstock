@@ -1,6 +1,6 @@
 {% set name = "argon2_cffi" %}
-{% set version = "18.3.0" %}
-{% set sha256 = "003f588de43a817af6ecc1c06103fa0801de63849db3cb0f37576bb2da29043d" %}
+{% set version = "19.1.0" %}
+{% set sha256 = "81548a27b919861040cb928a350733f4f9455dd67c7d1ba92eb5960a1d7f8b26" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
