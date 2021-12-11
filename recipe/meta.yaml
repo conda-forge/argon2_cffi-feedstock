@@ -1,6 +1,6 @@
 {% set name = "argon2-cffi" %}
-{% set version = "21.1.0" %}
-{% set sha256 = "f710b61103d1a1f692ca3ecbd1373e28aa5e545ac625ba067ff2feca1b2bb870" %}
+{% set version = "21.3.0" %}
+{% set sha256 = "d384164d944190a7dd7ef22c6aa3ff197da12962bd04b17f64d4e93d934dba5b" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script:
     - ln -sf $RANLIB $BUILD_PREFIX/bin/ranlib  # [unix]
     - {{ PYTHON }} -m pip install . -vv
