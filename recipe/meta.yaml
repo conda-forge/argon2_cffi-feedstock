@@ -23,18 +23,21 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cffi                                   # [build_platform != target_platform]
     - {{ compiler("c") }}
-    - flit_core >=3.4,<4
+    - flit-core >=3.4,<4
 
   host:
     - python >=3.6
     - pip
     - six
     - cffi >=1.0.0
+    - flit-core >=3.4,<4
 
   run:
     - python
     - six
     - cffi >=1.0.0
+    - flit-core >=3.4,<4
+
   run_constrained:
     # avoiding argon2-cffi and argon2_cffi to be installed in parallel
     - argon2_cffi ==999
