@@ -19,23 +19,21 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
+    - python >=3.6                           # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cffi                                   # [build_platform != target_platform]
     - {{ compiler("c") }}
 
   host:
-    - python
+    - python >=3.6
     - pip
     - six
     - cffi >=1.0.0
-    - enum34  # [py27]
 
   run:
     - python
     - six
     - cffi >=1.0.0
-    - enum34  # [py27]
   run_constrained:
     # avoiding argon2-cffi and argon2_cffi to be installed in parallel
     - argon2_cffi ==999
