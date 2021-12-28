@@ -21,21 +21,16 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cffi                                   # [build_platform != target_platform]
     - {{ compiler("c") }}
     - flit-core >=3.4,<4
 
   host:
     - python
     - pip
-    - six
-    - cffi >=1.0.0
     - flit-core >=3.4,<4
 
   run:
     - python
-    - six
-    - cffi >=1.0.0
     - flit-core >=3.4,<4
 
   run_constrained:
