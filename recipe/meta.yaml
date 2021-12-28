@@ -23,6 +23,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cffi                                   # [build_platform != target_platform]
     - {{ compiler("c") }}
+    - flit_core >=3.4,<4
 
   host:
     - python >=3.6
