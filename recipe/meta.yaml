@@ -1,29 +1,20 @@
 {% set name = "argon2-cffi" %}
 {% set version = "21.3.0" %}
-{% set sha256 = "d384164d944190a7dd7ef22c6aa3ff197da12962bd04b17f64d4e93d934dba5b" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: "d384164d944190a7dd7ef22c6aa3ff197da12962bd04b17f64d4e93d934dba5b"
 
 build:
   number: 0
-  script:
-    - ln -sf $RANLIB $BUILD_PREFIX/bin/ranlib  # [unix]
-    - {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - {{ compiler("c") }}
-    - flit-core >=3.4,<4
-
   host:
     - python
     - pip
@@ -32,6 +23,7 @@ requirements:
   run:
     - python
     - flit-core >=3.4,<4
+    - argon2-cffi-bindings
 
   run_constrained:
     # avoiding argon2-cffi and argon2_cffi to be installed in parallel
