@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - flit-core >=3.4,<4
 
   run:
-    - python
+    - python >=3.6
     - flit-core >=3.4,<4
     - argon2-cffi-bindings
 
