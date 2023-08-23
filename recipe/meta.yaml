@@ -34,6 +34,10 @@ requirements:
 test:
   imports:
     - argon2
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://argon2-cffi.readthedocs.org/
